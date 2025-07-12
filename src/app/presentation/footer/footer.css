@@ -1,24 +1,28 @@
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
   background-color: #1e1e1e;
   color: #fff;
-  padding: 1.5rem 0;
-  text-align: center;
+  padding: 1.5rem 2rem;
   border-top: 3px solid #00c1d4;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 999;
 }
+
+
 
 .footer-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .footer-logo {
-  width: 120px;
+  width: 60px;
   height: auto;
 }
 
