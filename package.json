@@ -1,5 +1,5 @@
 {
-  "name": "virtual-card-platform-web-2",
+  "name": "virtual-card-platform-web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:virtual-card-platform-web-2": "node dist/virtual-card-platform-web-2/server/server.mjs"
+    "serve:ssr:virtual-card-platform-web": "node dist/virtual-card-platform-web/server/server.mjs"
   },
   "prettier": {
     "overrides": [
