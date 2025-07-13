@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { TransactionSpend } from './presentation/transactions/transaction-spend/transaction-spend';
-import { TransactionTopup } from './presentation/transactions/transaction-topup/transaction-topup';
 
 export const routes: Routes = [
   {
