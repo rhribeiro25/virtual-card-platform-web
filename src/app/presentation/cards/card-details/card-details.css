@@ -1,0 +1,25 @@
+mat-card {
+  max-width: 600px;
+  height: 80%;
+  margin: auto;
+  padding: 32px;
+}
+
+.card-details-content {
+  padding: 10%;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin:7rem 4rem 0 0;
+}

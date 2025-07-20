@@ -1,1 +1,28 @@
-<p>card-details works!</p>
+<mat-card *ngIf="card">
+  <mat-card-header>
+    <mat-card-title>💳 Card Details</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="card-details-content">
+    <p><strong>ID:</strong> {{ card.id }}</p>
+    <p><strong>Name:</strong> {{ card.cardholderName }}</p>
+    <p><strong>Balance:</strong> {{ card.balance | currency:'EUR':'symbol':'1.2-2' }}</p>
+    <p><strong>Status:</strong> {{ card.status }}</p>
+    <p><strong>Created At:</strong> {{ card.createdAt | date: 'medium' }}</p>
+  </mat-card-content>
+
+  <div class="button-wrapper">
+    <app-button
+      label="Home"
+      type="button"
+      color="primary"
+      routerLink="">
+    </app-button>
+  </div>
+
+<mat-card *ngIf="!card">
+  <mat-card-content>
+    <p>⚠️ No card data available.</p>
+    <button mat-raised-button color="warn" routerLink="/">Go Home</button>
+  </mat-card-content>
+</mat-card>
