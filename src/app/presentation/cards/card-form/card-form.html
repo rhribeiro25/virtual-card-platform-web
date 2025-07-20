@@ -1,19 +1,35 @@
-<div class="form-container">
-  <h2 class="form-title">Add New Card</h2>
+<mat-card class="form-container">
+  <mat-card-header>
+    <mat-card-title>💳 Create a virtual Card</mat-card-title>
+  </mat-card-header>
 
-  <!-- Form -->
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-body">
-    <div class="form-group">
-      <label for="cardholderName">Client Name</label>
-      <input id="cardholderName" type="text" formControlName="cardholderName" placeholder="e.g., Erick F Araujo" />
-    </div>
+  <mat-card-content class="card-form-content">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-body" id="card-form">
 
-    <div class="form-group">
-      <label for="initialBalance">Initial Balance</label>
-      <input id="initialBalance" type="number" formControlName="initialBalance" placeholder="e.g., 100" />
-    </div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Client Name</mat-label>
+        <input matInput formControlName="cardholderName" placeholder="e.g., Erick F Araujo" />
+        <mat-error *ngIf="submitted() && form.get('cardholderName')?.invalid">
+          Name is required (min 3 characters)
+        </mat-error>
+      </mat-form-field>
 
-    <app-button label="Save"></app-button>
-
-  </form>
-</div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Initial Balance</mat-label>
+        <input matInput type="number" formControlName="initialBalance" placeholder="e.g., 100" />
+        <mat-error *ngIf="submitted() && form.get('initialBalance')?.invalid">
+          Must be 0 or greater
+        </mat-error>
+      </mat-form-field>
+      <div class="button-wrapper">
+        <app-button
+          form="card-form"
+          label="Save"
+          type="submit"
+          color="primary"
+          [disabled]="form.invalid">
+        </app-button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
