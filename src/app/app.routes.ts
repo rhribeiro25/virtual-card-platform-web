@@ -12,7 +12,7 @@ export const routes: Routes = [
       import('./presentation/cards/card-form/card-form').then((m) => m.CardForm),
   },
   {
-    path: 'cards/details/:id',
+    path: 'cards/details',
     loadComponent: () =>
       import('./presentation/cards/card-details/card-details').then((m) => m.CardDetails),
   },
