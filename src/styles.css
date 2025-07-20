@@ -25,3 +25,13 @@ app-root {
 body {
   padding-bottom: 100px;
 }
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
