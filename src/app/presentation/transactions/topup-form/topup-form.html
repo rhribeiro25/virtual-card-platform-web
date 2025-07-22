@@ -1,1 +1,27 @@
-<p>topup-form works!</p>
+<mat-card class="form-container">
+  <mat-card-header>
+    <mat-card-title>💳 Topping up money</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="topup-form-content">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-body" id="topup-form">
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" formControlName="amount" placeholder="e.g., 100" />
+        <mat-error *ngIf="submitted() && form.get('amount')?.invalid">
+          Must be more then 0
+        </mat-error>
+      </mat-form-field>
+      <div class="button-wrapper">
+        <app-button
+          form="topup-form"
+          label="Topup"
+          type="submit"
+          color="primary"
+          [disabled]="form.invalid">
+        </app-button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
