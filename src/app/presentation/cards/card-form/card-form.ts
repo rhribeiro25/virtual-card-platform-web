@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { LocalStorageUtil } from '../../../shared/utils/local-storage-util';
+import { CardResponse } from '../../../shared/dtos/card-response';
 
 @Component({
   selector: 'app-card-form',
@@ -53,7 +55,7 @@ export class CardForm {
             verticalPosition: 'top',
             horizontalPosition: 'right',
           });
-          localStorage.setItem('card', JSON.stringify(response));
+          LocalStorageUtil.setItem<CardResponse>('card', response);
           this.router.navigate(['cards/details'], {
             state: { card: response }
           });

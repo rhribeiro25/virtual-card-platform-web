@@ -11,6 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { v4 as uuidv4 } from 'uuid';
+import { LocalStorageUtil } from '../../../shared/utils/local-storage-util';
+import { CardResponse } from '../../../shared/dtos/card-response';
 
 @Component({
   selector: 'app-spend-form',
@@ -60,7 +62,7 @@ export class SpendForm {
               verticalPosition: 'top',
               horizontalPosition: 'right',
             });
-            localStorage.setItem('card', JSON.stringify(response));
+            LocalStorageUtil.setItem<CardResponse>('card', response);
             this.router.navigate(['cards/details'], {
               state: { card: response }
             });

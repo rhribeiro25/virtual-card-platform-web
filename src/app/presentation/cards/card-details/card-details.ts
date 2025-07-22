@@ -6,6 +6,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Button } from '../../button/button';
+import { LocalStorageUtil } from '../../../shared/utils/local-storage-util';
+import { CardResponse } from '../../../shared/dtos/card-response';
 
 @Component({
   selector: 'app-card-details',
@@ -31,8 +33,7 @@ export class CardDetails {
       this.card = navigation?.extras?.state?.['card'];
       console.log('📦 Card received by state:', this.card);
     } else {
-      const cardRaw = localStorage.getItem('card');
-      this.card = cardRaw ? JSON.parse(cardRaw) : null;
+      this.card = LocalStorageUtil.getItem<CardResponse>('card');
       console.log('📦 Card received by local storage:', this.card);
     }
     
