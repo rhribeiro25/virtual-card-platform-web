@@ -7,7 +7,7 @@ import { CardRequest } from '../../../shared/dtos/card-request';
 export class CreateCardUseCase {
   constructor(private cardClient: CardClient) {}
 
-  execute(input: CardRequest): Observable<any> {
-    return this.cardClient.createCard(input);
+  execute(card: CardRequest): Observable<any> {
+    return this.cardClient.createCard(card);
   }
 }

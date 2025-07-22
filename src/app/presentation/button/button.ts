@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
   `,
 })
 export class Button {
-  @Input() label: 'Save' | 'Home' | 'Cancel' | 'Delete' | 'Update' = 'Save';
+  @Input() label: 'Save' | 'Home' | 'Cancel' | 'Spend' | 'Topup' = 'Save';
   @Input() color: 'primary' | 'accent' | 'warn' | undefined = 'primary';
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Input() disabled = false;

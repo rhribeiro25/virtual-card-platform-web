@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TransactionTopup } from './transaction-topup';
+import { TopupForm } from './topup-form';
 
-describe('TransactionTopup', () => {
-  let component: TransactionTopup;
-  let fixture: ComponentFixture<TransactionTopup>;
+describe('TopupForm', () => {
+  let component: TopupForm;
+  let fixture: ComponentFixture<TopupForm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TransactionTopup]
+      imports: [TopupForm]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TransactionTopup);
+    fixture = TestBed.createComponent(TopupForm);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
