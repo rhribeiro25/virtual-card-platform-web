@@ -1,0 +1,54 @@
+.table-container {
+  max-width: 90%;
+  height: 90%;
+  margin-left: 6%;
+}
+
+.transaction-list-content {
+    width: 97%;
+    height: 87%;
+    max-height: 87%;
+    padding-top: 5%;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+}
+
+.full-width-table {
+  width: 97%;
+  height: 87%;
+  min-height: 87%;
+  max-height: 87%;
+}
+
+mat-header-cell, mat-cell {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.col-id {
+  width: 250px;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.col-type {
+  width: 100px;
+  max-width: 100px;
+  text-align: center;
+}
+
+.col-amount {
+  width: 120px;
+  max-width: 120px;
+  text-align: right;
+}
+
+.col-created {
+  width: 160px;
+  max-width: 160px;
+  text-align: center;
+}
