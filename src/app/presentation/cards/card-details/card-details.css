@@ -1,11 +1,11 @@
-mat-card {
-  max-width: 600px;
-  height: 80%;
-  margin: auto;
-  padding: 32px;
+.form-container {
+  max-width: 90%;
+  height: 90%;
+  margin-left: 6%;
 }
 
 .card-details-content {
+  padding-top: 5%;
   padding: 10%;
 }
 
@@ -15,11 +15,12 @@ mat-card-title {
 
 .full-width {
   width: 100%;
-  margin-bottom: 20px;
+  height: 90%;
+  max-height: 90%;
 }
 
 .button-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin:7rem 4rem 0 0;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
 }

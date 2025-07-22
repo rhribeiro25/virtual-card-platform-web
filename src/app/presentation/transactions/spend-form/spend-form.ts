@@ -46,8 +46,7 @@ export class SpendForm {
 
   onSubmit() {
     this.submitted.set(true);
-    const cardString = localStorage.getItem('card');
-    const card = cardString ? JSON.parse(cardString) : null;
+    const card = LocalStorageUtil.getItem<CardResponse>('card');
 
     if (this.form.valid) {
       const payload = {

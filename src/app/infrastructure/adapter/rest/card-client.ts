@@ -5,6 +5,7 @@ import { CardRequest } from '../../../shared/dtos/card-request';
 import { CardResponse } from '../../../shared/dtos/card-response';
 import { SpendRequest } from '../../../shared/dtos/spend-request';
 import { TopupRequest } from '../../../shared/dtos/topup-request';
+import { TransactionPageResponse } from '../../../shared/dtos/transaction-page-response';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +25,10 @@ export class CardClient {
   
   topup(cardId: string, payload: TopupRequest): Observable<CardResponse> {
     return this.http.post<CardResponse>(`${this.baseUrl}/${cardId}/topup`, payload);
+  }
+
+  getTransactions(cardId: string, page: number, size: number): Observable<TransactionPageResponse> {
+    const url = `${this.baseUrl}/${cardId}/transactions?page=${page}&size=${size}`;
+    return this.http.get<TransactionPageResponse>(url);
   }
 }
