@@ -1,0 +1,27 @@
+<mat-card class="form-container">
+  <mat-card-header>
+    <mat-card-title>💳 Spending money</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="spend-form-content">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-body" id="spend-form">
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" formControlName="amount" placeholder="e.g., 100" />
+        <mat-error *ngIf="submitted() && form.get('amount')?.invalid">
+          Must be more then 0
+        </mat-error>
+      </mat-form-field>
+      <div class="button-wrapper">
+        <app-button
+          form="spend-form"
+          label="Spend"
+          type="submit"
+          color="primary"
+          [disabled]="form.invalid">
+        </app-button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

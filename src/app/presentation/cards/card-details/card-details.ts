@@ -23,9 +23,18 @@ import { Button } from '../../button/button';
 })
 export class CardDetails {
   private router = inject(Router);
-  card = this.router.getCurrentNavigation()?.extras.state?.['card'];
+  card: any;
 
   constructor() {
-    console.log('📦 Card recebido via state:', this.card);
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation?.extras?.state?.['card'] != null) {
+      this.card = navigation?.extras?.state?.['card'];
+      console.log('📦 Card received by state:', this.card);
+    } else {
+      const cardRaw = localStorage.getItem('card');
+      this.card = cardRaw ? JSON.parse(cardRaw) : null;
+      console.log('📦 Card received by local storage:', this.card);
+    }
+    
   }
-}
+} 

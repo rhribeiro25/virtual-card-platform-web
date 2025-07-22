@@ -19,12 +19,12 @@ export const routes: Routes = [
   {
     path: 'spend',
     loadComponent: () =>
-      import('./presentation/transactions/transaction-spend/transaction-spend').then((m) => m.TransactionSpend),
+      import('./presentation/transactions/spend-form/spend-form').then((m) => m.SpendForm),
   },
   {
     path: 'topup',
     loadComponent: () =>
-      import('./presentation/transactions/transaction-topup/transaction-topup').then((m) => m.TransactionTopup),
+      import('./presentation/transactions/topup-form/topup-form').then((m) => m.TopupForm),
   },
   {
     path: 'transactions',
