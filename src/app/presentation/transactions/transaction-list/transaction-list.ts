@@ -31,22 +31,24 @@ export class TransactionList {
 
   constructor() {
     const card = LocalStorageUtil.getItem<CardResponse>('card');
-    
-    if(card != null){
-      this.transactionUsecase.getTransactionsByCard(card?.id, 0, 5).subscribe({
+
+    if (card != null) {
+      this.transactionUsecase.getTransactionsByCard(card.id, 0, 20).subscribe({
         next: (response) => {
           this.transactions = response.content;
+          this.dataSource.data = this.transactions;
+
+          this.dataSource.paginator = this.paginator;
+
           console.log('✅ Lista de transações:', this.transactions);
         },
         error: (err) => {
           console.error('❌ Erro ao buscar transações:', err);
         },
         complete: () => {
-          this.dataSource.data = this.transactions;
           console.log('🔁 Busca de transações finalizada');
         }
       });
     }
-    
   }
 }

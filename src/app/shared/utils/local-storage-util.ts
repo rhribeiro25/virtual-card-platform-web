@@ -24,15 +24,20 @@ export class LocalStorageUtil {
    * @param key - The key of the stored value.
    * @returns The parsed object or null if not found or invalid.
    */
-  static getItem<T>(key: string): T | null {
-    try {
-      const raw = localStorage.getItem(key);
-      return raw ? JSON.parse(raw) as T : null;
-    } catch (error) {
-      console.error(`❌ Failed to parse item '${key}' from localStorage:`, error);
-      return null;
-    }
+static getItem<T>(key: string): T | null {
+  if (typeof window === 'undefined') {
+    return null;
   }
+
+  try {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) as T : null;
+  } catch (error) {
+    console.error(`❌ Failed to parse item '${key}' from localStorage:`, error);
+    return null;
+  }
+}
+
 
   /**
    * Removes an item from localStorage by key.
